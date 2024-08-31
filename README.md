@@ -96,3 +96,4 @@ The following command builds and generates static content into the `build` direc
 ```
 $ pnpm build
 ```
+aws s3 ls --endpoint-url http://sh.cuckoox.cn:9001

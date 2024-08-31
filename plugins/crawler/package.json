@@ -1,4 +1,7 @@
 {
+    "name": "docs-crawler",
+    "version": "0.0.0",
+    "private": true,
     "main": "index.mjs",
     "dependencies": {
         "node-html-parser": "^6.1.11",
