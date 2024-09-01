@@ -1,0 +1,59 @@
+---
+sidebar_position: 5
+sidebar_label: 发布到minio
+title: CuckooX | 发布app或前端页面
+description: 使用aws的s3工具和makefile将打包好的数据同步到minio
+---
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# 发布app或前端页面到Minio
+## S3-Cli
+
+参考文档[AWS-CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html) ，直接按照文档指示一步步安装即可，安装完成后配置s3，有几个要点
+
+>  1. 使用`aws configure`配置`AWS Access Key ID`和`AWS Secret Access Key`
+>  2. 配置`region`，使用minio默认region是`us-east-1`
+>  3. 配置`minio`的url为`endpoint`
+
+```shell
+aws configure
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+最初我按照aws文档对全局变量进行配置
+```shell
+export AWS_IGNORE_CONFIGURED_ENDPOINT_URLS=true
+export AWS_ENDPOINT_URL=http://localhost:9000
+```
+但没有生效，于是我在`makefile`中手动指定了endpoint，最终部署成功。
+
+
+```makefile
+
+.PHONY: deploy
+deploy:
+	@echo "Deploy..."
+	aws s3 sync --region cn-cd-1 --endpoint-url http://localhost:9000 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./build/docs/assets s3://static/docs/assets/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://localhost:9000 --cache-control "public, max-age=300" --delete ./build/docs/img s3://static/docs/img/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://localhost:9000 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude "*" --include "*.html" ./build/docs s3://static/docs/
+	aws s3 cp --region cn-cd-1 --endpoint-url http://localhost:9000 --cache-control "public, max-age=30" ./build/docs/sitemap.xml s3://static/docs/
+
+```
+
+至此，当我前端代码写完，可以直接通过`make deploy`发布到网站上。后续发布app安装包也是同理。
+
+<ThemedImage
+  alt="SurrealML Storage Schema"
+  sources={{
+    light: useBaseUrl('img/logo-cuckoox.svg'),
+    dark: useBaseUrl('img/logo-cuckoox-dark.svg'),
+  }}
+/>
+
+<br />
+<br />

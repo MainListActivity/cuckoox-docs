@@ -1,7 +1,7 @@
 const isProd = process.env.IS_PROD_BUILD == "true";
 const config = {
-  title: 'SurrealDB Docs',
-  tagline: 'SurrealDB Docs',
+  title: 'CuckooX Docs',
+  tagline: 'CuckooX Docs',
   favicon: '/img/favicon.ico',
   url: 'https://cuckoox.cn',
   baseUrl: '/docs/',
@@ -22,7 +22,7 @@ const config = {
           sidebarPath: './sidebars.js',
           sidebarCollapsed: false,
           sidebarCollapsible: false,
-          editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
+          editUrl: 'https://github.com/MainListActivity/cuckoox-docs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
@@ -34,164 +34,23 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'doc-surrealdb',
+        id: 'doc-dev',
         sidebarCollapsed: true,
         sidebarCollapsible: true,
         includeCurrentVersion: false,
-        routeBasePath: '/surrealdb',
-        lastVersion: 'latest',
-        onlyIncludeVersions: ['latest'],
-        versions: {
-          "latest": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
+        routeBasePath: '/dev',
+        editUrl: 'https://github.com/MainListActivity/cuckoox-docs/edit/main/',
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'doc-surrealml',
+        id: 'doc-law',
         sidebarCollapsed: true,
         sidebarCollapsible: true,
         includeCurrentVersion: false,
-        routeBasePath: '/surrealml',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-surrealist',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/surrealist',
-        lastVersion: '2.x',
-        versions: {
-          "2.x": {
-            label: '2.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-sdk-javascript',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/sdk/javascript',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-sdk-rust',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/sdk/rust',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-sdk-python',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/sdk/python',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-sdk-dotnet',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/sdk/dotnet',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-sdk-golang',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/sdk/golang',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'doc-sdk-java',
-        sidebarCollapsed: true,
-        sidebarCollapsible: true,
-        includeCurrentVersion: false,
-        routeBasePath: '/sdk/java',
-        lastVersion: '1.x',
-        versions: {
-          "1.x": {
-            label: '1.x',
-            path: '',
-          },
-        },
-        editUrl: 'https://github.com/surrealdb/docs.cuckoox.cn/edit/main/',
+        routeBasePath: '/law',
+        editUrl: 'https://github.com/MainListActivity/cuckoox-docs/edit/main/',
       },
     ],
     'docusaurus-plugin-sass',
@@ -217,9 +76,9 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'SurrealDB Logo',
-          src: '/img/logo-surrealdb-dark.svg',
-          srcDark: '/img/logo-surrealdb.svg',
+          alt: 'CuckooX Logo',
+          src: '/img/logo-cuckoox-dark.svg',
+          srcDark: '/img/logo-cuckoox.svg',
         },
         items: [
           {
@@ -232,7 +91,7 @@ const config = {
             icon: 'none'
           },
           {
-            href: 'https://github.com/surrealdb/docs.cuckoox.cn',
+            href: 'https://github.com/MainListActivity/cuckoox-docs',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
@@ -241,7 +100,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `&copy; <a href='https://cuckoox.cn'>SurrealDB</a> &bull; <a href='https://github.com/surrealdb'>GitHub</a> &bull; <a href='https://discord.gg/surrealdb'>Discord</a> &bull; <a href='https://cuckoox.cn/community'>Community</a> &bull; <a href='https://cuckoox.cn/products'>Products</a> &bull; <a href='https://cuckoox.cn/features'>Features</a> &bull; <a href='https://cuckoox.cn/releases'>Releases</a> &bull; <a href='https://cuckoox.cn/install'>Install</a>`,
+        copyright: `&copy; <a href='https://cuckoox.cn'>CuckooX</a> &bull; <a href='https://github.com/cuckoox'>GitHub</a> &bull;   <a href='https://cuckoox.cn/products'>Products</a> &bull; <a href='https://cuckoox.cn/features'>Features</a> &bull; <a href='https://cuckoox.cn/releases'>Releases</a> &bull; <a href='https://cuckoox.cn/install'>Install</a>`,
       },
       prism: {
         additionalLanguages: [
