@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0" version="24.7.12">
   <diagram name="第 1 页" id="Vgr1khh9bZajA4_61rqw">
-    <mxGraphModel dx="1851" dy="989" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1306" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="uKolzK4MmTlCtpi3747j-6" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" edge="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-6" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="50" y="700" as="sourcePoint" />
             <mxPoint x="50" y="702" as="targetPoint" />
@@ -15,10 +15,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-7" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;创建案件&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-7" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;创建案件&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-8" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" edge="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-8" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="60" y="70" as="sourcePoint" />
             <mxPoint x="390" y="680" as="targetPoint" />
@@ -29,43 +29,43 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-9" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;定制案件程序&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-9" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;定制案件程序&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-10" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;划分小组&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-10" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;划分小组&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="230" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-11" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件成员管理&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-11" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件成员管理&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="230" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-12" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;公告管理&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-12" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;公告管理&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="320" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-13" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;关联公众号&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-13" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;关联公众号&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="320" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-14" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件详情&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-14" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件详情&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="410" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-15" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件进度&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-15" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件进度&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="410" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-16" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权审核&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-16" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权审核&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-17" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权计算过程对比&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-17" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权计算过程对比&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-18" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;实时申请数量&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-18" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;实时申请数量&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="90" y="590" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-19" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;实时审批操作&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-19" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;实时审批操作&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="590" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-20" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(255, 255, 255, 0.01); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;案件&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-20" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(255, 255, 255, 0.01); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;案件&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="60" y="80" width="60" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-21" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" edge="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-21" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="480" y="330" as="sourcePoint" />
             <mxPoint x="480" y="330" as="targetPoint" />
@@ -76,34 +76,34 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-22" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件公众号授权&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-22" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;案件公众号授权&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="500" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-23" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;公众号验证码登陆&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-23" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;公众号验证码登陆&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-24" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;关注公众号获取案件通知&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-24" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;关注公众号获取案件通知&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="500" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-25" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;公众号发布公告&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-25" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;公众号发布公告&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-26" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;自动更新公众号菜单&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-26" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;自动更新公众号菜单&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="500" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-27" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;监控案件进度&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-27" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;监控案件进度&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-28" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权申请&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-28" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权申请&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="500" y="630" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-29" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权计算过程记录&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-29" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;债权计算过程记录&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="630" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-30" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(255, 255, 255, 0.01); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;公众号&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-30" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(255, 255, 255, 0.01); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;公众号&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="490" y="330" width="60" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-31" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" edge="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-31" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="480" y="50" as="sourcePoint" />
             <mxPoint x="480" y="50" as="targetPoint" />
@@ -114,22 +114,22 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-32" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;会议现场视频&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-32" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;会议现场视频&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="500" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-33" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;举手表决&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-33" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;举手表决&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-34" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;会议纪要&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-34" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;会议纪要&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="500" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-35" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;会议议程&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-35" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;会议议程&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-36" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(255, 255, 255, 0.01); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;公众号&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-36" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgba(255, 255, 255, 0.01); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;公众号&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="490" y="60" width="60" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-37" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" edge="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-37" value="" style="endArrow=none;dashed=1;html=1;rounded=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="810" y="50" as="sourcePoint" />
             <mxPoint x="810" y="50" as="targetPoint" />
@@ -140,19 +140,19 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-38" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;支付宝人脸&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-38" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;支付宝人脸&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="830" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-39" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;真人视频&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-39" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;真人视频&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="980" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-40" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;微信人脸&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-40" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;微信人脸&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="830" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-41" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;函件邮寄密码&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-41" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;函件邮寄密码&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="980" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uKolzK4MmTlCtpi3747j-42" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; text-align: center; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;真人认证&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="uKolzK4MmTlCtpi3747j-42" value="&lt;span style=&quot;color: rgb(50, 50, 50); font-family: &amp;quot;Microsoft YaHei&amp;quot;, 微软雅黑, Arial; font-size: 13px; text-align: center; background-color: rgba(255, 255, 255, 0.01);&quot;&gt;真人认证&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="820" y="60" width="60" height="40" as="geometry" />
         </mxCell>
       </root>
