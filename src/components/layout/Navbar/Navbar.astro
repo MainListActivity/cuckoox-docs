@@ -1,0 +1,46 @@
+---
+import Image from '@components/Image.astro';
+import LightLogo from '@img/logo-dark.svg';
+import DarkLogo from '@img/logo.svg';
+import LightCuckooXLogo from '@img/logo-cuckoox-dark.svg';
+import DarkCuckooXLogo from '@img/logo-cuckoox.svg';
+import Search from '@src/components/Search.astro';
+import {Icon} from 'astro-icon/components';
+---
+
+<style>
+    div:has(~ div .flag-sidebar-container) .sidebar-toggle {
+        @apply max-lg:block;
+    }
+</style>
+
+<input type="checkbox" id="sidebar-toggle" class="hidden"/>
+<div class="h-14 min-h-14 px-6 md:px-8 lg:px-10 border-b border-border w-full bg-background flex justify-between items-center">
+    <div class="flex items-center h-full gap-5">
+        <label for="sidebar-toggle" class="hidden cursor-pointer sidebar-toggle">
+            <Icon name="fa6-solid:bars" class="w-5 h-5"/>
+        </label>
+        <a href={import.meta.env.BASE_URL}>
+            <div class="flex items-center h-full gap-3">
+                <Image
+                        class="block h-6"
+                        alt="CuckooX Logo"
+                        src={{
+                            light: DarkLogo,
+                            dark: LightLogo,
+                        }}
+                />
+                <Image
+                        class="block h-8"
+                        alt="CuckooX"
+                        width={400}
+                        src={{
+                            light: DarkCuckooXLogo,
+                            dark: LightCuckooXLogo,
+                        }}
+                />
+            </div>
+        </a>
+    </div>
+    <Search/>
+</div>

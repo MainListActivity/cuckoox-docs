@@ -1,0 +1,38 @@
+---
+sidebar_position: 2
+sidebar_label: 平台账号管理
+title: 平台账号管理 | 开发人员文档 | 布谷平台
+description: 平台账号管理相关交互逻辑
+---
+
+import Image from "@components/Image.astro";
+import CuckooX from '@img/logo-cuckoox.svg';
+
+<Image
+    alt="logo"
+    width={50}
+    className="flag-image-title"
+    src={{
+        light: CuckooX,
+        dark: CuckooX,
+    }}
+/>
+
+# 平台账号管理
+
+案件的管理人员登陆后，可以对案件干系人的平台账号进行管理，同时
+
+
+## 登陆页面
+页面支持用户输入账号密码或点击出现微信二维码，页面不提供注册功能，管理人员添加账号参考[账号管理](/docs/law)；首次登陆时不论使用哪种方式，只要没有设备指纹或当前设备已经很长时间（可配置，默认超过3个月）没有校验过MFA，都需要进行MFA校验。
+
+> 页面使用`wasm`生成设备指纹，校验MFA之后系统存储指纹ID；
+> MFA校验机制尽可能保证用户账号的安全
+
+## Token颁发
+所有校验通过后颁发Token，页面存储Token，并在发起请求时携带，WebSocket连接在连接后第一时间进行登陆认证。
+
+
+:::note
+___注意:___ 账号是隐私性极强的资产，需所有人共同努力；更多账号相关文档参考[平台账号模型](/docs/dev/account)
+:::

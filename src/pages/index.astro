@@ -1,0 +1,82 @@
+---
+import IconBox from '@components/boxes/IconBox.astro';
+import Boxes from '@src/components/boxes/Boxes.astro';
+import BaseLayout from '@src/components/layout/BaseLayout.astro';
+import LightCuckooX from '@img/text.svg';
+---
+
+<BaseLayout>
+    <div class="flex flex-grow justify-center">
+        <div class="max-w-screen-xl min-w-0 py-16 px-8 space-y-16 flex-grow">
+            <div class="space-y-4 lg:pt-8">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-thin leading-11">
+                    布谷 <br />
+                    文档中心
+                </h1>
+                <p class="md:w-2/3 lg:w-1/2 font-extralight text-text/60">
+                    布谷平台致力于为专业领域工作者提供一个一站式工作平台，您可定制自己的工作流程，并通过布谷平台连接您和您的客户。 <a href="/docs/dev">查看文档</a>, 或跳转到 <a href="/docs/prd/law">产品说明</a> to learn how to insert and query data in SurrealDB in minutes.
+                    <br /><br />
+                    To quickly test out SurrealDB and <a href="/docs/surrealql">SurrealQL</a> functionality, we've included <a href="/docs/surrealql/demo">demo dataset</a> which you can download and <a href="/docs/surrealdb/cli/import"><code>import</code></a> into your SurrealDB instance.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h1 class="text-4xl font-thin">
+                    快速上手
+                </h1>
+                <p class="md:w-2/3 lg:w-1/2 font-extralight text-text/60">
+                    您可以通过阅读产品文档，快速了解我们的产品能为您带来的便捷。
+                </p>
+                <div class="flex gap-4 pt-2 flex-wrap">
+                    <IconBox
+                        href="/docs/prd/law"
+                        icon={{ light: LightCuckooX, dark: LightCuckooX }}
+                    />
+
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h1 class="text-4xl font-thin">
+                    开发人员
+                </h1>
+                <Boxes wider class="pt-2">
+                    <IconBox
+                        title="SurrealDB"
+                        description="SurrealDB makes building and scaling realtime apps dramatically quicker and easier. Get started by installing the server, and jump into our getting started guide to learn how to insert and query data in SurrealDB in minutes."
+                        href="/docs/dev"
+                        icon={{ light: LightCuckooX, dark: LightCuckooX }}
+                    />
+
+                </Boxes>
+            </div>
+            <div class="space-y-4">
+                <h1 class="text-4xl font-thin">
+                    产品
+                </h1>
+                <Boxes columns={3} wider class="pt-2">
+                    <IconBox
+                        title="破产案件工作平台"
+                        status="available"
+                        description="A native async-friendly SDK for Rust with bi-directional, binary communication over WebSocket or HTTP, and support for SurrealDB embedded in-memory and on-disk."
+                        href="/docs/prd/law"
+                        icon={{ light: LightCuckooX, dark: LightCuckooX }}
+                    />
+                    <IconBox
+                        title="咨询室"
+                        status="available"
+                        description="A native async-friendly SDK for Rust with bi-directional, binary communication over WebSocket or HTTP, and support for SurrealDB embedded in-memory and on-disk."
+                        href="/docs/prd/law"
+                        icon={{ light: LightCuckooX, dark: LightCuckooX }}
+                    />
+                    <IconBox
+                        title="案件管理"
+                        status="available"
+                        description="A native async-friendly SDK for Rust with bi-directional, binary communication over WebSocket or HTTP, and support for SurrealDB embedded in-memory and on-disk."
+                        href="/docs/prd/law"
+                        icon={{ light: LightCuckooX, dark: LightCuckooX }}
+                    />
+
+                </Boxes>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

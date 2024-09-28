@@ -1,0 +1,291 @@
+---
+sidebar_position: 4
+sidebar_label: 经验之谈
+title: CuckooX | Exp
+description: all in one站点搭建经验，主要用到 Caddy、 Surrealdb、 Minio
+---
+
+import Image from "@components/Image.astro";
+import CuckooX from '@img/logo-cuckoox.svg';
+
+
+# 装机经验
+## Surrealdb
+
+可以直接按照官网步骤安装即可，很简单，唯一值得注意的是站点比较小的时候可以使用单机模式，但也要考虑后续使用集群；同时需要手动创建一个`surrealdb.service`文件用于自启动。
+
+```shell
+[Unit]
+Description=SurrealDb Service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/surreal start file:/path/to/data.db --bind [::]:8080 -A --user root --pass 自己修改密码
+StandardOutput=null
+StandardError=journal
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+另外，程序启动时建议bind端口的时候不要用官方文档里的`:8080` 用我参数里的 `[::]:8080`  这样可以同时使用ipv4和ipv6访问，后续我将使用ipv6的公网ip直接对外提供服务。
+
+## Minio
+
+为什么使用`minio`: 
+
+>  1. 可以通过s3命令本地直接部署前端代码（后面在[前端部署篇](/docs/dev会讲到）
+>  2. 用于发布app安装包
+>  3. 存储平台功能中的用户数据，例如： pdf、 word、 excel、png等
+
+
+参考官方文档，执行如下命令安装
+```shell
+wget https://dl.min.io/server/minio/release/linux-amd64/minio
+chmod +x minio
+sudo mv minio /usr/local/bin/
+
+```
+同时也需要手动添加`minio.service`文件。
+
+```shell
+[Unit]
+Description=MinIO
+Documentation=https://min.io/docs/minio/linux/index.html
+Wants=network-online.target
+After=network-online.target
+AssertFileIsExecutable=/usr/local/bin/minio
+
+[Service]
+WorkingDirectory=/usr/local
+
+User=minio-user
+Group=minio-user
+ProtectProc=invisible
+
+EnvironmentFile=-/etc/default/minio
+ExecStartPre=/bin/bash -c "if [ -z \"${MINIO_VOLUMES}\" ]; then echo \"Variable MINIO_VOLUMES not set in /etc/default/minio\"; exit 1; fi"
+ExecStart=/usr/local/bin/minio server $MINIO_OPTS $MINIO_VOLUMES
+
+# MinIO RELEASE.2023-05-04T21-44-30Z adds support for Type=notify (https://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=)
+# This may improve systemctl setups where other services use `After=minio.server`
+# Uncomment the line to enable the functionality
+# Type=notify
+
+# Let systemd restart this service always
+Restart=always
+
+# Specifies the maximum file descriptor number that can be opened by this process
+LimitNOFILE=65536
+
+# Specifies the maximum number of threads this process can create
+TasksMax=infinity
+
+# Disable timeout logic and wait until process is stopped
+TimeoutStopSec=infinity
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+
+添加用户和组
+
+```shell
+groupadd -r minio-user
+useradd -M -r -g minio-user minio-user
+chown minio-user:minio-user /mnt/disk1 /mnt/disk2 /mnt/disk3 /mnt/disk4
+```
+
+在`/etc/default/minio`文件中配置用户密码
+
+```shell
+# MINIO_ROOT_USER and MINIO_ROOT_PASSWORD sets the root account for the MinIO server.
+# This user has unrestricted permissions to perform S3 and administrative API operations on any resource in the deployment.
+# Omit to use the default values 'minioadmin:minioadmin'.
+# MinIO recommends setting non-default values as a best practice, regardless of environment
+
+MINIO_ROOT_USER=myminioadmin
+MINIO_ROOT_PASSWORD=minio-secret-key-change-me
+
+# MINIO_VOLUMES sets the storage volume or path to use for the MinIO server.
+
+MINIO_VOLUMES="/mnt/data"
+
+# MINIO_OPTS sets any additional commandline options to pass to the MinIO server.
+# For example, `--console-address :9001` sets the MinIO Console listen port
+MINIO_OPTS="--console-address :9001"
+```
+
+全程没有任何技巧，按照官方文档操作即可。
+
+## Caddy
+
+使用`Caddy`一定要用到高级功能，截止`2024-09-01`我的站点一共用到4个模块：
+
+> 前提是安装xcaddy，和golang开发环境，完成后添加模块： 
+> 1. cloudflare插件，用于通过cloudflare提供的api操作dns解析、还可以为自动TLS功能配置域名解析认证（SSL证书颁发给你域名的认证方式之一）
+> 2. 动态dns插件，如果你的ip是DHCP分配，那一定会用到，ip变更后自动推送DNS记录到cloudflare
+> 3. s3文件访问，用于发布静态资源，同时将静态资源提供给浏览器访问
+> 4. 手动编写的一个将重要日志记录到surreal的模块
+
+
+```shell
+xcaddy build \                                                                              
+    --with github.com/caddy-dns/cloudflare \
+    --with github.com/mholt/caddy-dynamicdns \
+    --with github.com/sagikazarmark/caddy-fs-s3 \
+    --with github.com/MainActivity/caddy-logger-surreal=.
+```
+
+需要注意`golang` 必须是1.23版本。
+
+构建完成后，会在当前目录生成一个`caddy`文件，将这个文件拷贝到 `/use/local/bin/`目录下，创建运行账号，并创建`caddy.service`文件：
+
+
+
+```shell
+sudo groupadd --system caddy
+sudo useradd --system \
+    --gid caddy \
+    --create-home \
+    --home-dir /var/lib/caddy \
+    --shell /usr/sbin/nologin \
+    --comment "Caddy web server" \
+    caddy
+```
+
+### caddy.service
+
+```shell
+# caddy.service
+#
+# For using Caddy with a config file.
+#
+# Make sure the ExecStart and ExecReload commands are correct
+# for your installation.
+#
+# See https://caddyserver.com/docs/install for instructions.
+#
+# WARNING: This service does not use the --resume flag, so if you
+# use the API to make changes, they will be overwritten by the
+# Caddyfile next time the service is restarted. If you intend to
+# use Caddy's API to configure it, add the --resume flag to the
+# `caddy run` command or use the caddy-api.service file instead.
+
+[Unit]
+Description=Caddy
+Documentation=https://caddyserver.com/docs/
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+Type=notify
+User=caddy
+Group=caddy
+ExecStart=/usr/bin/caddy run --environ --config /etc/caddy/Caddyfile
+ExecReload=/usr/bin/caddy reload --config /etc/caddy/Caddyfile --force
+TimeoutStopSec=5s
+LimitNOFILE=1048576
+PrivateTmp=true
+ProtectSystem=full
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+# 使用minio必备环境变量，或者和Minio的配置类似，读取环境变量文件，EnvironmentFile=-/etc/default/minio或caddy
+Environment=AWS_ACCESS_KEY_ID=xxxx
+Environment=AWS_SECRET_ACCESS_KEY=xxxxx
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Caddyfile
+
+其实更推荐将`Caddy`的配置存放在`surrealdb`里，方便以后做分布式，并且可以通过caddy的`admin-api`来控制模块，但目前我采用的方案依然是静态的Caddyfile。
+
+```shell
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# Unless the file starts with a global options block, the first
+# uncommented line is always the address of your site.
+#
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace ":80" below with your
+# domain name.
+{
+        dynamic_dns {
+                provider cloudflare {
+                        zone_token kg_c-xxxx
+                        api_token xxxx-xxxxxx
+                }
+                domains {
+                        cuckoox.cn @ www sh *
+                }
+                ip_source simple_http https://api64.ipify.org
+                check_interval 5m
+                versions ipv6
+                ttl 1h
+        }
+        filesystem my-s3-fs s3 {
+                bucket "static"
+                region "cn-cd-1"
+                endpoint "http://localhost:9000"
+                use_path_style
+        }
+        log default {
+                format json
+                output surrealDB {
+                        server ws://localhost:8080/rpc
+                        user xxxx
+                        pass xxxxxx
+                }
+        }
+}
+xxxxxx.cn {
+        redir / /docs
+        file_server {
+                fs my-s3-fs
+                pass_thru
+        }
+}
+xx.xxxxxx.cn {
+        # Set this path to your site's directory.
+        # root * /usr/share/caddy
+
+        # Enable the static file server.
+
+
+        # Another common task is to set up a reverse proxy:
+        # reverse_proxy localhost:8080
+
+        # Or serve a PHP site through php-fpm:
+        # php_fastcgi localhost:9000
+        reverse_proxy localhost:8080
+        log
+}
+*.xxxxx.cn {
+        reverse_proxy localhost:9001
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
+```
+
+后续准备将`surrealdb`做成一个app级别模块，方便在其他模块中操作数据；也逐步将配置切换到`surrealdb`中、将tls证书切换到`minio`，为后续多台服务做准备。
+
+
+<Image
+    alt="logo"
+    width={100}
+    className="flag-image-title"
+    src={{
+        light: CuckooX,
+        dark: CuckooX,
+    }}
+/>
+
+<br />
+<br />

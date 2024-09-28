@@ -1,0 +1,17 @@
+---
+import RenderDoc from '@src/components/RenderDoc.astro';
+import { products } from '@src/content/config.ts';
+import { getMeta } from '@src/util/doc';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() => {
+    return products.map((prd) => ({ params: { prd } }));
+}) satisfies GetStaticPaths;
+
+const { prd } = Astro.params;
+const noPageHeadings = await getMeta(`doc-prd-${prd}`, 'index').then(
+    (meta) => meta.no_page_headings
+);
+---
+
+<RenderDoc doc={`prd-${prd}`} slug="index" noPageHeadings={noPageHeadings} />

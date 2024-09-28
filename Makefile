@@ -25,18 +25,18 @@ dev:
 .PHONY: deploy
 deploy:
 	@echo "Deploy..."
-	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./build/docs/assets s3://static/docs/assets/
-	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=300" --delete ./build/docs/img s3://static/docs/img/
-	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude "*" --include "*.html" ./build/docs s3://static/docs/
-	aws s3 cp --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=30" ./build/docs/sitemap.xml s3://static/docs/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=31536000, immutable"  --exclude '.DS_Store' --exclude '*' --include '*.webp' --content-type 'image/webp' ./dist/docs/_astro s3://static/docs/_astro/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=31536000, immutable" --exclude '.DS_Store' --exclude '*.webp' ./dist/docs/_astro s3://static/docs/_astro/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=86400" --exclude '.DS_Store' ./dist/docs/~partytown s3://static/docs/~partytown/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=30" --delete --exclude '*' --include '*.html' ./dist/docs/ s3://static/docs/
 
 .PHONY: stage
 stage:
 	@echo "Stage..."
-	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=31536000, immutable" --exclude ".DS_Store" ./build/docs/assets s3://static/docs/assets/
-	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=300" --delete ./build/docs/img s3://static/docs/img/
-	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=300" --exact-timestamps --delete --exclude "*" --include "*.html" ./build/docs s3://static/docs/
-	aws s3 cp --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=30" ./build/docs/sitemap.xml s3://static/docs/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=31536000, immutable"  --exclude '.DS_Store' --exclude '*' --include '*.webp' --content-type 'image/webp' ./dist/docs/_astro s3://static/docs/_astro/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=31536000, immutable" --exclude '.DS_Store' --exclude '*.webp' ./dist/docs/_astro s3://static/docs/_astro/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=86400" --exclude '.DS_Store' ./dist/docs/~partytown s3://static/docs/~partytown/
+	aws s3 sync --region cn-cd-1 --endpoint-url http://sh.cuckoox.cn:9000 --cache-control "public, max-age=30" --delete --exclude '*' --include '*.html' ./dist/docs/ s3://static/docs/
 
 .PHONY: build
 build:

@@ -28,5 +28,7 @@ package-lock.json
 # Swap
 *.swp
 *.swo
+.astro
+dist
 
 history.txt
