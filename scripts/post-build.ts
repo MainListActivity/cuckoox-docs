@@ -9,10 +9,9 @@ const __dist = path.join(__root, 'dist/docs');
 const __astro = path.join(__dist, '_astro');
 
 const scripts = [
-    'https://snap.licdn.com/li.lms-analytics/insight.min.js',
-    'https://www.clarity.ms/tag/oa6ga5crfk',
-    'https://www.googletagmanager.com/gtag/js?id=G-J1NWM32T1V',
+    'https://www.googletagmanager.com/gtag/js?id=G-NJ0L40K4MW',
     'https://viewer.diagrams.net/js/viewer-static.min.js',
+    'https://www.clarity.ms/tag/oa6ga5crfk',
 ];
 
 await extractInlineResources();
@@ -23,15 +22,23 @@ async function fetchRemoteResources() {
     for (const script of scripts) {
         console.log(`[FETCH] Downloading and saving ${script}`);
         const content = await (await fetch(script).then(res => {
-            if (res.status === 200) {
-                return res;
-            } else {
-                throw Error("request err: " + script);
+            if (res.status != 200) {
+                console.log("request err: " + script);
             }
+            return res;
         })).text();
         const hash = createHash(content);
         const name = `_extr-${hash}.js`;
-        fs.writeFileSync(path.join(__astro, name), await minifyJS(content));
+        let parseError = false;
+        fs.writeFileSync(path.join(__astro, name), await minifyJS(content).catch(_ => {
+            console.log("parse err: " + script);
+            parseError = true;
+            return content;
+        }));
+        if (parseError) {
+            console.log("no replace " + script);
+            continue;
+        }
         // Scan the JS files in the dist folder
         console.log('[EXTRACT] Scanning JS files in dist/docs/ folder');
         const files = await glob('**/*.js', {

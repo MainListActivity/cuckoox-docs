@@ -3,7 +3,7 @@
 <script
     defer
     src="/js/script.js"
-    data-domain="surrealdb.com"
+    data-domain="cuckoox.cn"
     is:inline
 />
 
@@ -19,27 +19,18 @@
 		s.async = false;
 		s.defer = true;
 		document.head.appendChild(s);
+
+		let sDraw = document.createElement('script');
+
+		sDraw.src = 'https://viewer.diagrams.net/js/viewer-static.min.js';
+		sDraw.async = false;
+		sDraw.defer = true;
+		document.head.appendChild(sDraw);
 	}
 
 </script>
 
 <script defer is:inline type="text/partytown">
-
-	// LinkedIn
-
-	_linkedin_partner_id = '3271313';
-    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    window.lintrk = class { constructor(a, b) { window.lintrk.q.push([a, b]) } };
-    window.lintrk.q = [];
-
-	{
-		let s = document.createElement('script');
-		s.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
-		s.async = false;
-		s.defer = true;
-		document.head.appendChild(s);
-	}
 
 	// Google
 
@@ -48,11 +39,11 @@
     window.gtag = function () { window.dataLayer.push(arguments); };
 
     gtag('js', new Date());
-    gtag('config', 'G-J1NWM32T1V');
+    gtag('config', 'G-NJ0L40K4MW');
 
 	{
 		let s = document.createElement('script');
-		s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J1NWM32T1V';
+		s.src = 'https://www.googletagmanager.com/gtag/js?id=G-NJ0L40K4MW';
 		s.async = false;
 		s.defer = true;
 		document.head.appendChild(s);

@@ -10,6 +10,95 @@ import CuckooX from '@img/logo-cuckoox.svg';
 
 
 # 装机经验
+
+另外，可以通过ipv6实现外网访问，ubuntu安装server版本后，dhcp貌似有一些问题，正在解决中:
+
+具体现象是ipv6过期后没有自动续期
+
+```text
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether b0:25:aa:19:18:ba brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 10000
+    link/ether 64:80:99:f3:68:c6 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.116/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp3s0
+       valid_lft 77793sec preferred_lft 66993sec
+    inet6 2408:8266:201:2af7:6680:99ff:fef3:68c6/64 scope global deprecated dynamic mngtmpaddr noprefixroute
+       valid_lft 84153sec preferred_lft 0sec
+    inet6 fe80::6680:99ff:fef3:68c6/64 scope link
+       valid_lft forever preferred_lft forever
+```
+
+可以看到外网ipv6已经过期，但是没有获取新的ip，暂时的解决方案是使用`netplan apply`，此时会获取到新的ip，另外网上查询到，可以使用如下命令强行获取新的ip
+
+```shell
+# Step 1. Notifies dhcpcd to reload its configuration:
+sudo dhcpcd -k
+sudo dhcpcd -k eth0
+
+# Step 2. Then to renew the DHCP lease:
+sudo dhcpcd -n
+sudo dhcpcd -n eth0
+
+# Step 3. You can do it in a single go and watch the progress when using systemd
+# for the WiFi interface named 'wlan0'
+sudo dhcpcd -k wlan0 && sudo dhcpcd -n wlan0 && journalctl -u dhcpcd -f
+
+```
+
+经过排查，发现是`systemd-networkd`在运行时没有启动ipv6的dhcp功能，通过命令查看运行状态
+```shell
+sudo systemctl reload systemd-networkd
+#Oct 19 08:53:11 yyx systemd-networkd[312453]: wlp3s0: Gained IPv6LL
+#Oct 19 08:53:11 yyx systemd-networkd[312453]: wlp3s0: Connected WiFi access point: TP_5G (c8:bf:4c:1d:50:fb)
+#Oct 19 08:53:11 yyx systemd-networkd[312453]: Enumeration completed
+#Oct 19 08:53:11 yyx systemd[1]: Started systemd-networkd.service - Network Configuration.
+#Oct 19 08:53:11 yyx systemd-networkd[312453]: enp2s0: Configuring with /run/systemd/network/10-netplan-enp2s0.network.
+#Oct 19 08:53:11 yyx systemd-networkd[312453]: wlp3s0: Configuring with /run/systemd/network/10-netplan-wlp3s0.network.
+#Oct 19 08:53:12 yyx systemd-networkd[312453]: wlp3s0: DHCPv4 address 192.168.1.116/24, gateway 192.168.1.1 acquired from 192.168.1.1
+
+# 查看配置文件
+sudo vim /run/systemd/network/10-netplan-wlp3s0.network
+# 用这个配置，但是按照官方文档应该是配制成ipv6 : DHCP=yes
+# 结合上面日志排查， wlp3s0: Gained IPv6LL 实际上只启用了本地ipv6
+
+# 修改为以下内容，重启继续尝试
+#[Match]
+#Name=wlp3s0
+#
+#[Network]
+#DHCP=ipv6
+#
+#[DHCP]
+#RouteMetric=600
+#UseMTU=true
+
+```
+
+修改之后发现并没有什么作用，于是查询`netplan`官方文档发现其写了wifi需要搭配`NetworkManager`使用，于是安装并修改配置
+
+```yaml
+network:
+  version: 2
+
+  # if specified globally, can only realistically have that value, as
+  # networkd cannot render wifi/3G. This would be shipped as a separate
+  # config.d/ by desktop images
+  # it can also be specified by-type or by-device
+  renderer: NetworkManager # 不能是network-manager，这里和官方文档不同，可能是版本原因
+  ethernets:
+    wifis:
+      # this creates an AP on wlp1s0 using hostapd
+      # no match rules, thus ID is the interface name
+      wlp1s0:
+        access-points:
+          "TP_5G":
+            # mode defaults to "managed" (client), key type to wpa-psk
+            password: "Abc.1234"
+            # no WPA config implies default of open
+        dhcp4: true
+        dhcp6: true
+```
+
 ## Surrealdb
 
 可以直接按照官网步骤安装即可，很简单，唯一值得注意的是站点比较小的时候可以使用单机模式，但也要考虑后续使用集群；同时需要手动创建一个`surrealdb.service`文件用于自启动。
